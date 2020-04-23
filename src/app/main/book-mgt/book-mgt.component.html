@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="key" (keyup)="filter(key)" placeholder="Search by title"
+            aria-label="search" aria-describedby="button-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button" (click)="filter(key)">Search</button>
+        </div>
+    </div>
+    <div *ngIf="ls.books.length == 0" class="notice">
+        <h5>Click the add button to start adding books.</h5>
+    </div>
+
+    <div *ngIf="books.length == 0" class="notice">
+        <h5>Sorry no such book found!</h5>
+    </div>
+    <div *ngIf="books.length != 0" class="notice">
+        <h5><i>NB: Push the toggle button to publish to library.</i></h5>
+    </div>
+    <section>
+        <div class="card" style="max-width: 16rem;" *ngFor="let book of books">
+            <img src="{{book.coverImgUrl ? book.coverImgUrl : 'https://images.unsplash.com/photo-1461419912973-9964f1f54b24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80'}}"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <mat-slide-toggle style="padding-left: 65%;" color="primary" labelPosition='before'
+                    [checked]="book.published" (toggleChange)="publish(book.id)"></mat-slide-toggle>
+                <h5 class="card-title">{{book.title}}</h5>
+                <small>Created: <i>{{book.createdAt}}</i></small><br>
+                <small>Modified: <i>{{book.modified}}</i></small>
+            </div>
+            <div class="action">
+                <i class="far fa-trash-alt is-pointer" (click)="delete(book.id)"></i>
+                <i class="far fa-edit is-pointer" (click)="openCreateModal(book)"></i>
+            </div>
+        </div>
+    </section>
+    <button class="btn btn-sm btn-primary cta" aria-label="add" (click)="openCreateModal('create')">
+        <i class="fas fa-plus"></i>
+    </button>
+</div>

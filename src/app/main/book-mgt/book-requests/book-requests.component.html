@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Filter</label>
+        </div>
+        <select class="custom-select" [(ngModel)]="key" id="inputGroupSelect01" (change)="filter(key)">
+            <option value="all">All</option>
+            <option value="true">Approved</option>
+            <option value="false">Pending</option>
+        </select>
+    </div>
+    <div *ngIf="ls.bookRequests.length == 0" class="notice">
+        <h5>No book requests at the moment.</h5>
+    </div>
+    <section>
+        <div class="card" style="max-width: 16rem;" *ngFor="let book of books">
+            <img src="{{book.coverImgUrl ? book.coverImgUrl : 'https://images.unsplash.com/photo-1461419912973-9964f1f54b24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80'}}"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{book.title}}</h5>
+                <small>Created: <i>{{book.createdAt}}</i></small><br>
+                <small>Modified: <i>{{book.modified}}</i></small>
+            </div>
+            <small class="pend-r mb-1" *ngIf="!book.approved"><i>pending approval</i></small>
+            <small class="pend-g mb-1" *ngIf="book.approved"><i>Aprroved</i></small>
+            <div class="action">
+                <button class="btn btn-sm btn-secondary" (click)="return(book.id)">
+                    Return
+                </button>
+
+                <button class="btn btn-sm btn-primary" (click)="approve(book.id)" *ngIf="!book.approved">
+                    Approve
+                </button>
+            </div>
+        </div>
+    </section>
+</div>

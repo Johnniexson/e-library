@@ -1,0 +1,55 @@
+<div class="modal dialog" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Book Mgt.</h5>
+                <button type="button" class="close" (click)="close()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" formControlName="title"
+                            placeholder="e.g A trip to Moon">
+                        <small class="warn" *ngIf="controls.title.invalid && controls.title.touched">
+                            Title is <strong>required</strong>
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label>CoverImgUrl</label>
+                        <input type="url" class="form-control" formControlName="coverImgUrl"
+                            placeholder="e.g https://name@example.com/cover.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label>Publisher</label>
+                        <input type="text" class="form-control" formControlName="publisher"
+                            placeholder="e.g Johnniexson">
+                    </div>
+                    <small class="warn" *ngIf="controls.publisher.invalid && controls.publisher.touched">
+                        Publisher is <strong>required</strong>
+                    </small>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <!-- <textarea class="form-control" formControlName="content" rows="3"></textarea> -->
+                        <ckeditor formControlName="content" [editor]="Editor" [config]="config" placeholder="hello">
+                        </ckeditor>
+                        <small class="warn" *ngIf="controls.content.invalid && controls.content.touched">
+                            Content is <strong>required</strong>
+                        </small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+                <button *ngIf="data === 'create'" type="button" class="btn btn-sm btn-primary" (click)="submit()"
+                    [disabled]="form.invalid">Add
+                    Book</button>
+                <button *ngIf="data !== 'create'" type="button" class="btn btn-sm btn-primary" (click)="update()"
+                    [disabled]="form.invalid">Save
+                    changes</button>
+            </div>
+        </div>
+    </div>
+</div>

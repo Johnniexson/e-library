@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="key" (keyup)="filter(key)" placeholder="Search by title"
+            aria-label="search" aria-describedby="button-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button" (click)="filter(key)">Search</button>
+        </div>
+    </div>
+    <div *ngIf="ls.libraryBooks.length == 0" class="notice">
+        <h5>Check back later, books are yet to be published by the librarians!</h5>
+    </div>
+
+    <div *ngIf="libraryBooks.length == 0" class="notice">
+        <h5>Sorry no such book found!</h5>
+    </div>
+    <section *ngIf="libraryBooks">
+        <div class="card" style="max-width: 16rem;" *ngFor="let book of libraryBooks">
+            <img src="{{book.coverImgUrl ? book.coverImgUrl : 'https://images.unsplash.com/photo-1461419912973-9964f1f54b24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80'}}"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{book.title}}</h5>
+                <small>Created: <i>{{book.createdAt}}</i></small><br>
+                <small>Modified: <i>{{book.modified}}</i></small>
+            </div>
+            <button *ngIf="ls.auth === 'user'" class="btn btn-sm btn-primary" (click)="borrow(book)"
+                [disabled]="ls.checkBorrow(book.id)">
+                Borrow
+            </button>
+            <button *ngIf="ls.auth === 'librarian'" class="btn btn-sm btn-primary" (click)="openBook(book)">
+                Read
+            </button>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,19 @@
+.form-group {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    input {
+        width: auto;
+    }
+}
+
+.notice {
+    color: red;
+    text-align: center !important;
+    padding: 25px;
+
+    em {
+        color: blue;
+    }
+}

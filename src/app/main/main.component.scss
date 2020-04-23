@@ -1,0 +1,83 @@
+@media screen and (max-width: 720px) {
+    aside {
+        display: none;
+        position: fixed !important;
+        top: 58px !important;
+        padding: 30px 15px !important;
+        left: 0;
+        height: calc(100vh - 58px);
+        z-index: 999999;
+        width: 250px;
+        overscroll-behavior-y: none !important;
+
+        .menu-list {
+            font-size: 18px !important;
+        }
+    }
+
+    .expand-btn {
+        display: flex !important;
+    }
+}
+
+.abs-r {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.expand-btn {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    width: 20px;
+    height: 5rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    z-index: 9999;
+}
+
+#main {
+    padding-top: 56px;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(230, 225, 230, 1);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(230, 225, 230, 1);
+    box-shadow: 0px 5px 5px 0px rgba(230, 225, 230, 1);
+}
+
+aside {
+    position: sticky;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    overflow-y: scroll;
+    background-color: white;
+    -webkit-box-shadow: 5px 0px 8px 0px rgba(230, 225, 230, 1);
+    -moz-box-shadow: 5px 0px 8px 0px rgba(230, 225, 230, 1);
+    box-shadow: 5px 0px 8px 0px rgba(230, 225, 230, 1);
+}
+
+section {
+    position: relative;
+    flex: 1;
+    overflow-y: scroll;
+}

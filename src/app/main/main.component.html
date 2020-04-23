@@ -1,0 +1,31 @@
+<div id="main">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#"><i class="fas fa-book mr-3"></i>E-library</a>
+        <h5><i class="fas fa-user-circle mr-2"></i>{{ls.user}}</h5>
+    </nav>
+    <main>
+        <div class="expand-btn" (click)="expandMenu()">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <aside class="sidebar p-3" #menu>
+            <span class="icon abs-r p-3" *ngIf="isScreenSmall()" (click)="expandMenu()">
+                <i class="fas fa-times"></i>
+            </span>
+            <ul class="menu-list">
+                <li class="menu-item" routerLinkActive="is-active"><a routerLink="./library"><i
+                            class="fas fa-archive mr-2"></i>library</a></li>
+                <li *ngIf="ls.auth === 'user'" class="menu-item" routerLinkActive="is-active"><a
+                        routerLink="./my-books"><i class="fas fa-th-list mr-2"></i>My-Books</a></li>
+                <li *ngIf="ls.auth === 'librarian'" class="menu-item" routerLinkActive="is-active"><a
+                        routerLink="./book-mgt"><i class="fas fa-book mr-2"></i>Book-mgt</a></li>
+                <li *ngIf="ls.auth === 'librarian'" class="menu-item" routerLinkActive="is-active"><a
+                        routerLink="./book-requests"><i class="fas fa-th-list mr-2"></i>Book-Requests</a></li>
+                <li class="menu-item" routerLinkActive="is-active"><a routerLink="/getting-started"><i
+                            class="fas fa-sign-out-alt mr-2"></i>LogOut</a></li>
+            </ul>
+        </aside>
+        <section class="p-3">
+            <router-outlet></router-outlet>
+        </section>
+    </main>
+</div>
