@@ -2,103 +2,107 @@
 $primary: #0069d9;
 
 @media (max-width: 720px) {
-    h5 {
-        font-size: 0.7rem !important;
-    }
+  h5 {
+    font-size: 0.7rem !important;
+  }
 
-    h6 {
-        font-size: 10px !important;
-    }
+  h6 {
+    font-size: 10px !important;
+  }
 
-    .card-body {
-        padding: 0.25rem !important;
-        font-size: 10px;
-    }
+  .card-body {
+    padding: 0.25rem !important;
+    font-size: 10px;
+  }
 }
 
 body {
-    min-height: 100vh;
-    min-width: 100vw;
-    margin: 0;
-    font-size: 12px;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  font-size: 12px;
 }
 
 .card-title {
-    margin-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.card .card-img-top {
+  height: 200px;
 }
 
 .ck-rounded-corners .ck.ck-editor__editable:not(.ck-editor__nested-editable),
 .ck.ck-editor__editable:not(.ck-editor__nested-editable).ck-rounded-corners {
-    border: 1px solid #ced4da;
-    outline: none;
-    box-shadow: unset;
-    border-radius: 4px !important;
+  border: 1px solid #ced4da;
+  outline: none;
+  box-shadow: unset;
+  border-radius: 4px !important;
 }
 
 .ck-editor__editable_inline {
-    min-height: 280px;
-    max-height: 400px;
+  min-height: 280px;
+  max-height: 400px;
 }
 
 a:hover {
-    color: $primary !important;
-    text-decoration: none !important;
+  color: $primary !important;
+  text-decoration: none !important;
 }
 
 .is-active {
-    color: $primary !important;
-    background-color: #dee3e86e !important;
+  color: $primary !important;
+  background-color: #dee3e86e !important;
 
-    a {
-        color: $primary !important;
-    }
+  a {
+    color: $primary !important;
+  }
 }
 
 .modal-content {
-    height: 100%;
+  height: 100%;
 }
 
 .modal-dialog {
-    min-height: 50vh;
-    min-width: 85vw;
-    max-height: 80vh;
+  min-height: 50vh;
+  min-width: 85vw;
+  max-height: 80vh;
 }
 
 .modal-body {
-    font-size: small;
-    overflow-y: scroll !important;
+  font-size: small;
+  overflow-y: scroll !important;
 }
 
 .dialog {
-    display: flex !important;
-    color: initial !important;
-    align-items: center !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-    position: fixed !important;
-    z-index: 40 !important;
+  display: flex !important;
+  color: initial !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  position: fixed !important;
+  z-index: 40 !important;
 }
 
 .menu-list {
-    list-style: none;
-    padding: 0;
-    line-height: 2.5rem;
-    font-size: 20px;
+  list-style: none;
+  padding: 0;
+  line-height: 2.5rem;
+  font-size: 20px;
 }
 
 .menu-item a {
-    color: #8e8f91;
+  color: #8e8f91;
 }
 
 .mat-slide-toggle-bar {
-    background-color: rgba(178, 170, 170, 0.5) !important;
+  background-color: rgba(178, 170, 170, 0.5) !important;
 }
 
 .is-pointer {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
 .warn {
-    color: red !important;
+  color: red !important;
 }

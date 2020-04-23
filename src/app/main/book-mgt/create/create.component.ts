@@ -59,7 +59,12 @@ export class CreateComponent implements OnInit {
   createForm() {
     this.form = this.fb.group({
       title: ["", Validators.required],
-      coverImgUrl: [""],
+      coverImgUrl: [
+        "",
+        Validators.pattern(
+          "^(http[s]?:\\/\\/(www\\.)?|ftp:\\/\\/(www\\.)?|(www\\.)?){1}([0-9A-Za-z-\\.@:%_+~#=]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?"
+        ),
+      ],
       publisher: ["", Validators.required],
       content: [
         "<h3>Introduction</h3><p>Hello, world!</p>",

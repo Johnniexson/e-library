@@ -13,9 +13,10 @@ export class LibraryService {
     {
       id: uuidv4(),
       title: "My story",
-      coverImgUrl: "https://myimage.com/image.jpg",
+      coverImgUrl:
+        "https://images.unsplash.com/photo-1568137223715-939ee931710e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
       content: "This is a simple story of me",
-      publisher: "string",
+      publisher: "John snow",
       createdAt: "02/02/2020, 2:23:50 pm",
       modified: "02/03/2020, 2:23:50 pm",
       published: false,
@@ -23,9 +24,10 @@ export class LibraryService {
     {
       id: uuidv4(),
       title: "My story",
-      coverImg: "",
+      coverImgUrl:
+        "https://images.unsplash.com/photo-1461419912973-9964f1f54b24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80",
       content: "This is a simple story of me",
-      publisher: "string",
+      publisher: "John Doe",
       createdAt: "02/02/2020, 2:23:50 pm",
       modified: "02/03/2020, 2:23:50 pm",
       published: true,
