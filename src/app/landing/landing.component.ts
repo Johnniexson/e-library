@@ -10,12 +10,14 @@ import { Router } from "@angular/router";
 })
 export class LandingComponent implements OnInit {
   name = new FormControl("", Validators.required);
+  loading: boolean;
 
   constructor(public ls: LibraryService, private router: Router) {}
 
   ngOnInit() {}
 
   go(where) {
+    this.loading = true;
     this.ls.user = this.name.value;
     if (where === "library") {
       this.ls.auth = "user";

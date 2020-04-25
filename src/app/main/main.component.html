@@ -12,14 +12,15 @@
                 <i class="fas fa-times"></i>
             </span>
             <ul class="menu-list">
-                <li class="menu-item" routerLinkActive="is-active"><a routerLink="./library"><i
+                <li class="menu-item" routerLinkActive="is-active" (click)="closeMenu()"><a routerLink="./library"><i
                             class="fas fa-archive mr-2"></i>library</a></li>
-                <li *ngIf="ls.auth === 'user'" class="menu-item" routerLinkActive="is-active"><a
+                <li *ngIf="ls.auth === 'user'" class="menu-item" routerLinkActive="is-active" (click)="closeMenu()"><a
                         routerLink="./my-books"><i class="fas fa-th-list mr-2"></i>My-Books</a></li>
-                <li *ngIf="ls.auth === 'librarian'" class="menu-item" routerLinkActive="is-active"><a
-                        routerLink="./book-mgt"><i class="fas fa-book mr-2"></i>Book-mgt</a></li>
-                <li *ngIf="ls.auth === 'librarian'" class="menu-item" routerLinkActive="is-active"><a
-                        routerLink="./book-requests"><i class="fas fa-th-list mr-2"></i>Book-Requests</a></li>
+                <li *ngIf="ls.auth === 'librarian'" class="menu-item" routerLinkActive="is-active"
+                    (click)="closeMenu()"><a routerLink="./book-mgt"><i class="fas fa-book mr-2"></i>Book-mgt</a></li>
+                <li *ngIf="ls.auth === 'librarian'" class="menu-item" routerLinkActive="is-active"
+                    (click)="closeMenu()"><a routerLink="./book-requests"><i
+                            class="fas fa-th-list mr-2"></i>Book-Requests</a></li>
                 <li class="menu-item" routerLinkActive="is-active"><a routerLink="/getting-started"><i
                             class="fas fa-sign-out-alt mr-2"></i>LogOut</a></li>
             </ul>

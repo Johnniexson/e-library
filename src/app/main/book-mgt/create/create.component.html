@@ -45,7 +45,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+                <button type="button" class="btn btn-sm btn-secondary" (click)="close()">Close</button>
                 <button *ngIf="data === 'create'" type="button" class="btn btn-sm btn-primary" (click)="submit()"
                     [disabled]="form.invalid">Add
                     Book</button>

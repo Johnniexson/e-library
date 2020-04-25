@@ -48,6 +48,12 @@ export class MainComponent implements OnInit, OnDestroy {
     return this.mobileQuery.matches;
   }
 
+  closeMenu() {
+    if (this.isScreenSmall()) {
+      this.menu.nativeElement.style.display = "none";
+    }
+  }
+
   expandMenu() {
     this.hidden = !this.hidden;
     if (!this.hidden) {
