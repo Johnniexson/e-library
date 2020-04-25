@@ -46,7 +46,11 @@ export class LibraryService {
   }
 
   addBook(data) {
-    this.books.push(data);
+    const _data = {
+      id: uuidv4(),
+      ...data,
+    };
+    this.books.push(_data);
     this.openSnackBar("New Book added", "Success!");
   }
 
